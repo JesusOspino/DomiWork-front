@@ -1,0 +1,42 @@
+<p-scrollPanel [style]="{width: '100%', height: '78vh', padding: '10px'}">
+    <div class="grid">
+        <div class="col-8">
+            <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{'max-width': '700px', 'margin-top': '10px'}" [numVisible]="5" [circular]="true"
+                [showItemNavigators]="true" [showThumbnails]="false" [autoPlay]="true" [transitionInterval]="4000">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="grid grid-nogutter justify-content-center">
+                        <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="caption" let-item>
+                    <h4 style="margin-bottom: .5rem; color: #ffffff;">{{item.title}}</h4>
+                    <p>{{item.alt}}</p>
+                </ng-template>
+            </p-galleria>
+        </div>
+
+        <div class="flex justify-content-between align-items-end flex-column col-4">
+            <div class="datos w-full">
+                <div class="flex justify-content-between align-items-center card-info">
+                    <i class="pi pi-users text-5xl m-3"></i>
+                    <p class="text-xl m-1">Mas de {{numero?.n}} trabajadores disponibles</p>
+                </div>
+
+                <div class="flex justify-content-between align-items-center card-info" [routerLink]="['/registro']"
+                    style="cursor: pointer;">
+                    <i class="pi pi-user-edit text-5xl m-3"></i>
+                    <p class="text-xl m-1">Tu tambien puedes ser parte de nosotros</p>
+                </div>
+            </div>
+
+            <button pButton pRipple type="button" label="Busca un trabajador"
+                class="p-button-outlined w-full b-0 mr-1 text-white" routerLinkActive="router-link-active"
+                [routerLink]="['/lista']"></button>
+        </div>
+    </div>
+
+</p-scrollPanel>

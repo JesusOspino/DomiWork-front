@@ -1,0 +1,22 @@
+.footer {
+  height: 100px;
+  background-color: var(--header);
+  color: #efbc75;
+
+  .name,
+  .description {
+    height: 100%;
+
+    h5 {
+      font-size: 25px;
+    }
+
+    h4 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
